@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тортики & Тістечка</title>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    header span {
+      color: crimson;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card .info {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin: 0;
+      color: #666;
+    }
+
+
+    .sidebar {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidebar h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .sidebar input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+
+
+    .sidebar input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #666;
+      cursor: pointer;
+    }
+
+    .sidebar button {
+      background: #f2f2f2;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .sidebar button:hover {
+      background: #ddd;
+    }
+
+    footer {
+      text-align: left;
+      padding: 15px 20px;
+      font-size: 14px;
+      background: #f0f0f0;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    @media (max-width: 729px) {
+      .container {
+        grid-template-columns: 1fr;
+        padding: 12px;
+      }
+
+      .sidebar {
+        order: -1;
+        width: 93%;
+        margin-bottom: 16px;
+      }
+
+      .cards {
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .sidebar input[type=range] {
+        width: 100%;
+      }
+      .sidebar button {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+    @media (min-width: 730px) and (max-width: 1199px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+  
+      .sidebar {
+        order: -1;
+        width: 94%;
+        margin-bottom: 20px;
+      }
+      .cards {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px;
+      }
+  
+      .card {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>Тортики <span>&</span> Тістечка</header>
+
+  <div class="container">
+    <div class="cards">
+      <div class="card">
+        <img src="https://rud.ua/uploads/under_recipe/01.jpg" alt="Сметанковий">
+        <div class="info">
+          <h3>Торт: Сметанковий</h3>
+          <p>Калорії у порції 265 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://mrgrill.ua/storage/products/images/big/oeZTjYFJkRshg4BykAbG6Hh9QPEuvDpiwr0pyXJY.png?v=1722513425" alt="Маффін">
+        <div class="info">
+          <h3>Тістечко: Маффін</h3>
+          <p>Калорії у порції 305 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://static.wixstatic.com/media/3a5f14_0ae6680b672449b48fbdb94b88989524~mv2.jpg/v1/fill/w_568,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3a5f14_0ae6680b672449b48fbdb94b88989524~mv2.jpg" alt="Три ягоди">
+        <div class="info">
+          <h3>Сирники: Три ягоди</h3>
+          <p>Калорії у порції 450 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://rud.ua/uploads/recipe/61cc1ba9a56cf.jpg" alt="Смачний">
+        <div class="info">
+          <h3>Торт: Смачний</h3>
+          <p>Калорії у порції 523 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.tsn.ua/cached/131/tsn-0b4bc102/thumbs/1200x630/5b/af/12b7271699713a36a2910e68c65baf5b.jpg" alt="Святковий">
+        <div class="info">
+          <h3>Рулет: Святковий</h3>
+          <p>Калорії у порції 380 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://glamour.kyiv.ua/wp-content/uploads/2024/03/firmovyj-babusyn-pyrig-reczept-zi-starogo-zoshyta-gotuyetsya-za-15-hvylyn-a-zyidayetsya-shhe-shvydshe-1024x546.jpg" alt="Свято у бабусі">
+        <div class="info">
+          <h3>Пиріг: Свято у бабусі</h3>
+          <p>Калорії у порції 298 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://www.tortik.in.ua/img/landing/product/test/88-1636933040-4x.webp" alt="Ведмедик">
+        <div class="info">
+          <h3>Торт: Ведмедик</h3>
+          <p>Калорії у порції 600 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9HIVw9PZQ_PetADjk6FWmm6puwJmc_LKgUg&s" alt="Живі квіти">
+        <div class="info">
+          <h3>Тістечко: Живі квіти</h3>
+          <p>Калорії у порції 438 кКал</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://kamelena.com/uploads/recipes/500/528/f528-limonnyj-keks-s-makom.jpg" alt="Лимонне з маком">
+        <div class="info">
+          <h3>Тістечко: Лимонне з маком</h3>
+          <p>Калорії у порції 348 кКал</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <h4>Калорії у порції</h4>
+      <input type="range" min="0" max="400" value="250">
+      <p>Від 0 до 400 кКал</p>
+      <button>Пиріг</button>
+      <button>Рулет</button>
+      <button>Сирники</button>
+      <button>Тістечко</button>
+      <button>Торт</button>
+      <button>Скинути фільтр</button>
+    </aside>
+  </div>
+
+  <footer>
+    Контакти: <a href="mailto:tortik@smakota.ua">tortik@smakota.ua</a><br>
+    © 2025 Smakota
+  </footer>
+</body>
+</html>
